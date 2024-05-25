@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-lg">
+    <div class="container-lg">
+        <img src="../../../assets/Contenido/logo.png" alt="logo de la empresa" width="10%">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/">Contacto</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Servicios
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" routerLink="/">Mantenimiento</a></li>
+                        <li><a class="dropdown-item" routerLink="/">Ventas</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="d-flex dropdown">
+                <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <p class="m-0">
+                        <strong>Hola,</strong> 
+                    </p>
+                    Inicia Sesión
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" routerLink="/">Inicia Sesión</a></li>
+                    <li><a class="dropdown-item" routerLink="/">Regístrate</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn ms-3" style="background-color: var(--color-secundario);">Sacar Cita</button>
+        </div>
+    </div>
+</nav>

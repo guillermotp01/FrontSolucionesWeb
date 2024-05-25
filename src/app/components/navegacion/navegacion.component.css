@@ -1,0 +1,12 @@
+.navbar{
+    background-color: var(--color-principal);
+    color: var(--color-texto);
+}
+
+.navbar a{
+    color: var(--color-texto);
+}
+
+.dropdown-menu{
+    background-color: var(--color-principal);
+}
