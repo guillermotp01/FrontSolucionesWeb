@@ -1,0 +1,18 @@
+<main class="vh-100 d-flex justify-content-center align-items-center">
+    <div class="contenedor">
+        <div class="panel-izquierdo">
+            <h2>inicia sesión</h2>
+            <p>ingrese con su correo</p>
+            <input type="email" placeholder="correo" required>
+            <input type="password" placeholder="contraseña" required>
+            <button>INGRESAR</button>
+        </div>
+        <div class="panel-derecho">
+            <h2>Hola,Usuario</h2>
+            <p>registrate con tus datos personales</p>
+            <button mat-stroked-button color="primary"
+            (click)="formRegistro()"
+            >Registrate</button>
+        </div>
+    </div>
+</main>

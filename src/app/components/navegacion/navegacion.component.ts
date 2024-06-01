@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navegacion',
@@ -9,4 +10,29 @@ import { Component } from '@angular/core';
 })
 export class NavegacionComponent {
 
+  constructor(private router: Router) { }
+
+  formCita(){
+    this.router.navigate(['cita']);
+  }
+
+  inicio(){
+    this.router.navigate(['inicio']);
+  }
+
+  nosotros(){
+    this.router.navigate(['nosotros']);
+  }
+
+  contacto(){
+    this.router.navigate(['contacto']);
+  }
+
+  formLogin(){
+    this.router.navigate(['login']);
+  }
+
+  formRegistro(){
+    this.router.navigate(['registro']);
+  }
 }

@@ -1,0 +1,39 @@
+<main class="vh-100 justify-content-center align-items-center d-flex">
+    <div class="contenedor">
+        <div class="panel-derecho">
+            <h2>Bienvenido</h2>
+            <p>Ingrese con sus detalles personal</p>
+            <button mat-stroked-button color="primary"
+            (click)="formInicio()"
+            >Ingresar</button>
+        </div>
+        <div class="panel-izquierdo">
+            <h2>Crear Cuenta</h2>
+            <p>Regístrate aquí</p>
+            <form [formGroup]="formUsuario">
+                <div class="formulario">
+                    <div class="columna">
+                        <input matInput formControlName="nombre" placeholder="Nombre">
+                        <input matInput formControlName="apellido" placeholder="Apellido">
+                        <select formControlName="tipoDocumento" required>
+                            <option value="" disabled selected>Tipo Documento</option>
+                            <option value="dni">DNI</option>
+                            <option value="pasaporte">Pasaporte</option>
+                            <option value="carnet">Carnet de Extranjería</option>
+                        </select>
+                        <input matInput type="number" formControlName="nroDocumento" placeholder="Documento">
+                        <input matInput type="number" formControlName="telefono" placeholder="Telefono">
+                    </div>
+                    <div class="columna">
+                        <input matInput formControlName="correo"  placeholder="Correo">
+                        <input matInput formControlName="username"  placeholder="Usuario">
+                        <input matInput formControlName="contraseña"  placeholder="Contraseña">
+                        <input matInput formControlName="direccion"  placeholder="Direccion">
+                    </div>
+                </div>
+                <button mat-flat-button color="accent"
+                    (click)="registrarUsuario()">Registrar</button>
+            </form>
+        </div>
+    </div>
+</main>

@@ -7,16 +7,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="d-flex navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/">Inicio</a>
+                    <a class="nav-link active" aria-current="page" (click)="inicio()">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/">Nosotros</a>
+                    <a class="nav-link" (click)="nosotros()">Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/">Contacto</a>
+                    <a class="nav-link" (click)="contacto()">Contacto</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Servicios
                     </a>
                     <ul class="dropdown-menu">
@@ -33,11 +33,11 @@
                     Inicia Sesión
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" routerLink="/">Inicia Sesión</a></li>
-                    <li><a class="dropdown-item" routerLink="/">Regístrate</a></li>
+                    <li><a class="dropdown-item" (click)="formLogin()">Inicia Sesión</a></li>
+                    <li><a class="dropdown-item" (click)="formRegistro()">Regístrate</a></li>
                 </ul>
             </div>
-            <button type="button" class="btn ms-3" style="background-color: var(--color-secundario);">Sacar Cita</button>
+            <button type="button" class="btn ms-3" style="background-color: var(--color-secundario);" (click)="formCita()">Sacar Cita</button>
         </div>
     </div>
 </nav>
