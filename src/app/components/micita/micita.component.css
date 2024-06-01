@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .formulario {
     width: 800px;
     height: 500px;
@@ -87,4 +88,95 @@ tbody{
     display: flex;
     justify-content: center;
     align-items: center; /* Centra verticalmente */
+=======
+.formulario {
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
+    margin: 188px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    position: relative;
+}
+
+.contenedor {
+    
+    width: 600px;
+    margin-top: 90px;
+}
+
+.textbut {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    position: absolute;
+    top: 0; 
+}
+
+#texto {
+    color: #012538;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#agregar {
+    width: 120px;
+    height: 40px;
+    border-radius: 10px;
+    margin-top: 5px;
+    color: white;
+    background-color: #012538;
+    border: none;
+}
+
+table {
+    width: 100%;
+    color: #012538;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+th, td{
+    padding: 20px;
+}
+
+thead{
+    border-bottom: #012538 solid 3px;
+}
+
+tbody{
+    color: #012538;
+}
+
+#detalle{
+    width: 30px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #012538;
+    border: none;
+}
+#bot,
+#bot2 {
+    color: #012538;
+    width: 30px;
+    height: 20px;
+    margin: 10px; 
+    border-radius: 10px; 
+    background-color: #012538;
+    border: none;
+    
+}
+
+.scroll {
+    margin-top: 0px; /* Aumenta el espacio entre la tabla y los botones */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra verticalmente */
+>>>>>>> a7c8e5667d91f9c63a96f5a4ebcec57e5e109655
 }

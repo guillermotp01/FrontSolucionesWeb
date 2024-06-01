@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { Component } from '@angular/core';
+=======
+import { Component, inject } from '@angular/core';
+>>>>>>> a7c8e5667d91f9c63a96f5a4ebcec57e5e109655
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +14,7 @@ import { Router } from '@angular/router';
 })
 export class NavegacionComponent {
 
+<<<<<<< HEAD
   constructor(private router: Router) { }
 
   formCita(){
@@ -34,5 +39,13 @@ export class NavegacionComponent {
 
   formRegistro(){
     this.router.navigate(['registro']);
+=======
+  constructor(private router:Router){
+  }
+
+  citar(){
+    this.router.navigate(['/cita']); 
+>>>>>>> a7c8e5667d91f9c63a96f5a4ebcec57e5e109655
   }
 }
+

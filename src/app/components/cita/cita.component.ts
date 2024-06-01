@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CitasService } from '../../Services/citas.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Citas } from '../../Models/Citas';
+import { Cita } from '../../Models/Cita';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,22 +13,22 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./cita.component.css']
 })
 export class CitaComponent implements OnInit {
-  citas: CredentialRequestOptions;
+  cita: Cita;
 
   constructor(private citaService: CitasService, private router: Router) {
-    this.citas = this.initializeCita();
+    this.cita = this.initializeCita();
   }
 
   ngOnInit(): void {}
 
-  initializeCita(): Citas {
+  initializeCita(): Cita {
     return {
       fechacita: new Date(),
       horacita: { hours: 0, minutes: 0 },
       nombre: '',
       apellido: '',
       telefono: 0,
-      direccion: '',  
+      direccion: '',
       fecha_nac: new Date(),
       correo: '',
       sexo: '',
@@ -45,11 +45,11 @@ export class CitaComponent implements OnInit {
   }
 
   registrarCita(): void {
-    this.citaService.registrarCita(this.citas).subscribe(
+    this.citaService.registrarCita(this.cita).subscribe(
       response => {
         console.log('Cita registrada exitosamente', response);
         this.regreso();
-        this.citas = this.initializeCita();
+        this.cita = this.initializeCita();
         alert("La cita se registro correctamente"); 
       },
       error => {

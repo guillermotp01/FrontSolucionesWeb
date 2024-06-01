@@ -18,4 +18,5 @@ export const routes: Routes = [
     { 'path': 'login', component:LoginComponent },
     { 'path': 'registro', component:RegistroComponent },
     { 'path': 'usuario', component:UsuarioComponent },
+    { 'path': 'micita', component:MIcitaComponent}
 ];
