@@ -14,7 +14,6 @@ import { Citas } from '../../Models/Citas';
   templateUrl: './micita.component.html',
   styleUrl: './micita.component.css'
 })
-<<<<<<< HEAD
 export class MIcitaComponent{
   @Input('codigo') codigo !: number
   private citasServicio = inject(CitasService);
@@ -42,9 +41,4 @@ export class MIcitaComponent{
   crearCita(){
     this.router.navigate(['cita']);
   }
-=======
-
-export class MIcitaComponent {
-    
->>>>>>> a7c8e5667d91f9c63a96f5a4ebcec57e5e109655
 }
