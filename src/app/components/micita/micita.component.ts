@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
   templateUrl: './micita.component.html',
   styleUrl: './micita.component.css'
 })
-export class MIcitaComponent {
 
+export class MIcitaComponent {
+    
 }
