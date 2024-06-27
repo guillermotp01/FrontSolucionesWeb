@@ -1,7 +1,7 @@
 <main class="min-vh-100 p-3">
     <h2 class="text-center mt-5">Registro de Citas</h2>
-    <section class="d-flex container-lg mt-5">
-        <div class="row w-100">
+    <section class="container-lg mt-5">
+        <div class="row justify-content-center"> <!-- Añadido justify-content-center -->
             <div class="col-lg-8 col-md-12 mb-4">
                 <div class="cita-extra card mb-3 p-3">
                     <div class="card-body d-flex justify-content-between">
@@ -35,25 +35,25 @@
                         <div class="mb-3 row">
                             <label for="telefonoPersona" class="col-sm-3 col-form-label">Telefono:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su telefono de contacto">
+                                <input type="text" class="form-control" id="telefonoPersona" placeholder="Ingrese su telefono de contacto">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="direccionPersona" class="col-sm-3 col-form-label">Dirección:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su direccion">
+                                <input type="text" class="form-control" id="direccionPersona" placeholder="Ingrese su direccion">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="fechanaciPersona" class="col-sm-3 col-form-label">Fecha de nacimiento:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su fecha de nacimiento">
+                                <input type="text" class="form-control" id="fechanaciPersona" placeholder="Ingrese su fecha de nacimiento">
                             </div>
                         </div>
                         <div class="mb-3 row">
                             <label for="correoPersona" class="col-sm-3 col-form-label">Correo:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su correo">
+                                <input type="text" class="form-control" id="correoPersona" placeholder="Ingrese su correo">
                             </div>
                         </div>
                         <div class="mb-3 row">
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="nombrePersona" class="col-sm-3 col-form-label">Tipo de documento:</label>
+                            <label for="tipodedocumento" class="col-sm-3 col-form-label">Tipo de documento:</label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="tipodedocumento">
                                     <option value="">Seleccione su tipo de documento</option>
@@ -77,15 +77,14 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="nombrePersona" class="col-sm-3 col-form-label">Numero de documento:</label>
+                            <label for="numeroDocumento" class="col-sm-3 col-form-label">Numero de documento:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese el numero">
+                                <input type="text" class="form-control" id="numeroDocumento" placeholder="Ingrese el numero">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
             <div class="col-lg-6">
                 <div class="info-vehiculo card mb-3">
                     <div class="card-body">
@@ -103,7 +102,7 @@
                             </div>
                         </div>
                         <div class="mb-3 row">
-                            <label for="anoVehiculo" class="col-sm-3 col-form-label">Año:</label>
+                            <label for="anioVehiculo" class="col-sm-3 col-form-label">Año:</label>
                             <div class="col-sm-9">
                                 <input type="text" class="form-control" id="anioVehiculo" placeholder="Ingresar año">
                             </div>
@@ -135,7 +134,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="col-lg-12 d-flex justify-content-center">
                 <button type="button" class="btn btn-primary" (click)="registrarCita()">Registrar Cita</button>
             </div>
