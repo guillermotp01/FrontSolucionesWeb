@@ -7,6 +7,7 @@ import { MIcitaComponent } from './components/micita/micita.component';
 import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { DetalleCitaComponent } from './components/detalle-cita/detalle-cita.component';
 
 export const routes: Routes = [
     { 'path': '', component:PrincipalComponent },
@@ -18,5 +19,6 @@ export const routes: Routes = [
     { 'path': 'login', component:LoginComponent },
     { 'path': 'registro', component:RegistroComponent },
     { 'path': 'usuario', component:UsuarioComponent },
-    { 'path': 'micita', component:MIcitaComponent}
+    { 'path': 'micita', component:MIcitaComponent},
+    { 'path': 'detalleCita', component:DetalleCitaComponent}
 ];
