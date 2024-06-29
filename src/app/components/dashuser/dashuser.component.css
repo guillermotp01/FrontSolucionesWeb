@@ -1,0 +1,61 @@
+/* dashuser.component.css */
+.wrapper {
+    display: flex;
+    height: 100vh;
+}
+
+#sidebar {
+    width: 250px;
+    background-color: var(--color-principal);    color: #fff;
+    height: 100%;
+    position: fixed;
+}
+
+.sidebar-logo a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav .sidebar-item {
+    display: block;
+}
+
+.sidebar-nav .sidebar-link {
+    color: #adb5bd;
+    text-decoration: none;
+    display: block;
+    padding: 1rem;
+}
+
+.sidebar-nav .sidebar-link:hover {
+    background-color: var(--color-principal);
+    color: #fff;
+}
+
+.sidebar-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1rem;
+}
+
+.main-content {
+    margin-left: 250px;
+    width: calc(100% - 250px);
+    padding: 20px;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 1rem;
+}

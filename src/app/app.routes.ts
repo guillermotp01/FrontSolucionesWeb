@@ -8,6 +8,9 @@ import { RegistroComponent } from './components/registro/registro.component';
 import { LoginComponent } from './components/login/login.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { DetalleCitaComponent } from './components/detalle-cita/detalle-cita.component';
+import { DashuserComponent } from './components/dashuser/dashuser.component';
+import { PerfilUsuarioComponent } from './components/perfil-usuario/perfil-usuario.component';
+import { AutosUsuarioComponent } from './components/autos-usuario/autos-usuario.component';
 
 export const routes: Routes = [
     { 'path': '', component:PrincipalComponent },
@@ -20,5 +23,8 @@ export const routes: Routes = [
     { 'path': 'registro', component:RegistroComponent },
     { 'path': 'usuario', component:UsuarioComponent },
     { 'path': 'micita', component:MIcitaComponent},
-    { 'path': 'detalleCita', component:DetalleCitaComponent}
+    { 'path': 'detalleCita', component:DetalleCitaComponent},
+    { 'path': 'dashUser', component:DashuserComponent},
+    { 'path': 'miperfil', component:PerfilUsuarioComponent},
+    { 'path': 'misautos', component:AutosUsuarioComponent}
 ];

@@ -1,9 +1,9 @@
 <main class="min-vh-100 p-3">
-    <h2 class="text-center mt-5">Registro de Citas</h2>
-    <section class="container-lg mt-5">
-        <div class="row justify-content-center"> <!-- Añadido justify-content-center -->
-            <div class="col-lg-8 col-md-12 mb-4">
-                <div class="cita-extra card mb-3 p-3">
+    <h2 class="text-center mt-5 mb-3">Registro de Citas</h2>
+    <section class="container-lg">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-md-12 mb-2">
+                <div class="cita-extra card p-3">
                     <div class="card-body d-flex justify-content-between">
                         <div class="d-flex align-items-center">
                             <label class="mr-3 mb-0">Fecha de Cita:</label>
@@ -16,125 +16,97 @@
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="info-persona card mb-3">
+            <div class="col-lg-6 mb-2">
+                <div class="info-persona card">
                     <div class="card-body">
-                        <h5 class="card-title">Información de Persona</h5>
-                        <div class="mb-3 row">
-                            <label for="nombrePersona" class="col-sm-3 col-form-label">Nombre:</label>
-                            <div class="col-sm-9">
+                        <h2 class="card-title mb-3">Información de Persona</h2>
+                        <div class="row">
+                            <div class="col-sm-6 mb-2">
+                                <label for="nombrePersona" class="col-form-label">Nombre:</label>
                                 <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su nombre">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="apellidoPersona" class="col-sm-3 col-form-label">Apellido:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su apellido">
+                            <div class="col-sm-6 mb-2">
+                                <label for="apellidoPersona" class="col-form-label">Apellido:</label>
+                                <input type="text" class="form-control" id="apellidoPersona" placeholder="Ingrese su apellido">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="telefonoPersona" class="col-sm-3 col-form-label">Telefono:</label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" id="telefonoPersona" placeholder="Ingrese su telefono de contacto">
+                            <div class="col-sm-6 mb-2">
+                                <label for="telefonoPersona" class="col-form-label">Telefono:</label>
+                                <input type="text" class="form-control" id="telefonoPersona" placeholder="Ingrese su telefono">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="direccionPersona" class="col-sm-3 col-form-label">Dirección:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="direccionPersona" class="col-form-label">Dirección:</label>
                                 <input type="text" class="form-control" id="direccionPersona" placeholder="Ingrese su direccion">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="fechanaciPersona" class="col-sm-3 col-form-label">Fecha de nacimiento:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="fechanaciPersona" class="col-form-label">Fecha de nacimiento:</label>
                                 <input type="text" class="form-control" id="fechanaciPersona" placeholder="Ingrese su fecha de nacimiento">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="correoPersona" class="col-sm-3 col-form-label">Correo:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="correoPersona" class="col-form-label">Correo:</label>
                                 <input type="text" class="form-control" id="correoPersona" placeholder="Ingrese su correo">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="sexoPersona" class="col-sm-3 col-form-label">Sexo:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="sexoPersona" class="col-form-label">Sexo:</label>
                                 <select class="form-control" id="sexoPersona">
                                     <option value="">Seleccione su sexo</option>
                                     <option value="M">Masculino</option>
                                     <option value="F">Femenino</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="tipodedocumento" class="col-sm-3 col-form-label">Tipo de documento:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="tipodedocumento" class="col-form-label">Tipo de documento:</label>
                                 <select class="form-control" id="tipodedocumento">
                                     <option value="">Seleccione su tipo de documento</option>
                                     <option value="E">Extranjeria</option>
                                     <option value="DNI">Documento de identidad</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="numeroDocumento" class="col-sm-3 col-form-label">Numero de documento:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="numeroDocumento" class="col-form-label">Numero de documento:</label>
                                 <input type="text" class="form-control" id="numeroDocumento" placeholder="Ingrese el numero">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6">
-                <div class="info-vehiculo card mb-3">
+            <div class="col-lg-6 mb-2">
+                <div class="info-vehiculo card">
                     <div class="card-body">
-                        <h5 class="card-title">Información del Vehículo</h5>
-                        <div class="mb-3 row">
-                            <label for="marcaVehiculo" class="col-sm-3 col-form-label">Marca:</label>
-                            <div class="col-sm-9">
+                        <h2 class="card-title mb-3">Información del Vehículo</h2>
+                        <div class="row">
+                            <div class="col-sm-6 mb-2">
+                                <label for="marcaVehiculo" class="col-form-label">Marca:</label>
                                 <input type="text" class="form-control" id="marcaVehiculo" placeholder="Ingresar marca">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="modeloVehiculo" class="col-sm-3 col-form-label">Modelo:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="modeloVehiculo" class="col-form-label">Modelo:</label>
                                 <input type="text" class="form-control" id="modeloVehiculo" placeholder="Ingresar modelo">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="anioVehiculo" class="col-sm-3 col-form-label">Año:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="anioVehiculo" class="col-form-label">Año:</label>
                                 <input type="text" class="form-control" id="anioVehiculo" placeholder="Ingresar año">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="colorVehiculo" class="col-sm-3 col-form-label">Color:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="colorVehiculo" class="col-form-label">Color:</label>
                                 <input type="text" class="form-control" id="colorVehiculo" placeholder="Ingresar color">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="motorVehiculo" class="col-sm-3 col-form-label">Motor:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="motorVehiculo" class="col-form-label">Motor:</label>
                                 <input type="text" class="form-control" id="motorVehiculo" placeholder="Ingresar motor">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="placaVehiculo" class="col-sm-3 col-form-label">Placa:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-6 mb-2">
+                                <label for="placaVehiculo" class="col-form-label">Placa:</label>
                                 <input type="text" class="form-control" id="placaVehiculo" placeholder="Ingresar placa">
                             </div>
-                        </div>
-                        <div class="mb-3 row">
-                            <label for="observacionesVehiculo" class="col-sm-3 col-form-label">Observaciones:</label>
-                            <div class="col-sm-9">
+                            <div class="col-sm-12 mb-2">
+                                <label for="observacionesVehiculo" class="col-form-label">Observaciones:</label>
                                 <input type="text" class="form-control" id="observacionesVehiculo" placeholder="Ingrese sus observaciones">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-12 d-flex justify-content-center">
+            <div class="col-lg-12 d-flex justify-content-center mt-0">
                 <button type="button" class="btn btn-primary" (click)="registrarCita()">Registrar Cita</button>
             </div>
         </div>
