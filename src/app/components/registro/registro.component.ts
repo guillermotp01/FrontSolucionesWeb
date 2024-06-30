@@ -7,13 +7,15 @@ import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuarioService } from '../../Services/usuario.service';
 import Swal from 'sweetalert2';
+import { FooterComponent } from "../footer/footer.component";
+import { NavegacionComponent } from "../navegacion/navegacion.component";
 
 @Component({
-  selector: 'app-registro',
-  standalone: true,
-  imports: [MatFormFieldModule, MatButtonModule, MatInputModule, ReactiveFormsModule, MatSelectModule],
-  templateUrl: './registro.component.html',
-  styleUrls: ['./registro.component.css']
+    selector: 'app-registro',
+    standalone: true,
+    templateUrl: './registro.component.html',
+    styleUrls: ['./registro.component.css'],
+    imports: [MatFormFieldModule, MatButtonModule, MatInputModule, ReactiveFormsModule, MatSelectModule, FooterComponent, NavegacionComponent]
 })
 export class RegistroComponent implements OnInit{
   @Input('codigo') codigo: number | null = null;
@@ -23,14 +25,14 @@ export class RegistroComponent implements OnInit{
   constructor(private router: Router) { }
 
   public formUsuario: FormGroup = this.formBuild.group({
-    codigo: [0],
+    idUsuario: [0],
     nombre: [""],
     apellido: [""],
     correo: [""],
     tipoDocumento: [""],
     nroDocumento: [0],
     username: [""],
-    contraseña: [""],
+    password: [""],
     telefono: [0],
     direccion: [""]
   });
@@ -41,14 +43,14 @@ export class RegistroComponent implements OnInit{
         next: (data) => {
           if (data) {
             this.formUsuario.patchValue({
-              codigo: data.codigo,
+              idUsuario: data.idCliente,
               nombre: data.nombre,
               apellido: data.apellido,
               correo: data.correo,
               tipoDocumento: data.tipoDocumento,
               nroDocumento: data.nroDocumento,
               username: data.username,
-              contraseña: data.contraseña,
+              password: data.password,
               telefono: data.telefono,
               direccion: data.direccion
             });
@@ -72,14 +74,14 @@ export class RegistroComponent implements OnInit{
           Swal.fire('Registro Denegado', 'El usuario ya existe', 'error');
         } else {
           const nuevoUsuario = {
-            codigo: this.formUsuario.value.codigo,
+            idCliente: this.formUsuario.value.idCliente,
             nombre: this.formUsuario.value.nombre,
             apellido: this.formUsuario.value.apellido,
             correo: this.formUsuario.value.correo,
             tipoDocumento: this.formUsuario.value.tipoDocumento,
             nroDocumento: this.formUsuario.value.nroDocumento,
             username: this.formUsuario.value.username,
-            contraseña: this.formUsuario.value.contraseña,
+            password: this.formUsuario.value.password,
             telefono: this.formUsuario.value.telefono,
             direccion: this.formUsuario.value.direccion
           };

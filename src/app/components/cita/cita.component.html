@@ -1,3 +1,4 @@
+<app-navegacion></app-navegacion>
 <main class="min-vh-100 p-3">
     <h2 class="text-center mt-5 mb-3">Registro de Citas</h2>
     <section class="container-lg">
@@ -14,6 +15,13 @@
                             <input type="time" class="form-control">
                         </div>
                     </div>
+                    <div class="col-sm-12 mb-2">
+                        <label for="vehiculoCliente" class="col-form-label">Tipo de Cita</label>
+                        <select class="form-select">
+                            <option value="">Seleccione un tipo</option>
+                            <option *ngFor="let tipo of tipoCita" [value]="tipo.idTipoCita">{{ tipo.nombre }}</option>
+                        </select>
+                    </div>
                 </div>
             </div>
             <div class="col-lg-6 mb-2">
@@ -23,39 +31,27 @@
                         <div class="row">
                             <div class="col-sm-6 mb-2">
                                 <label for="nombrePersona" class="col-form-label">Nombre:</label>
-                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su nombre">
+                                <input type="text" class="form-control" id="nombrePersona" placeholder="Ingrese su nombre" [(ngModel)]="cliente.nombre">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="apellidoPersona" class="col-form-label">Apellido:</label>
-                                <input type="text" class="form-control" id="apellidoPersona" placeholder="Ingrese su apellido">
+                                <input type="text" class="form-control" id="apellidoPersona" placeholder="Ingrese su apellido" [(ngModel)]="cliente.apellido">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="telefonoPersona" class="col-form-label">Telefono:</label>
-                                <input type="text" class="form-control" id="telefonoPersona" placeholder="Ingrese su telefono">
+                                <input type="text" class="form-control" id="telefonoPersona" placeholder="Ingrese su telefono" [(ngModel)]="cliente.telefono">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="direccionPersona" class="col-form-label">Dirección:</label>
-                                <input type="text" class="form-control" id="direccionPersona" placeholder="Ingrese su direccion">
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label for="fechanaciPersona" class="col-form-label">Fecha de nacimiento:</label>
-                                <input type="text" class="form-control" id="fechanaciPersona" placeholder="Ingrese su fecha de nacimiento">
+                                <input type="text" class="form-control" id="direccionPersona" placeholder="Ingrese su direccion" [(ngModel)]="cliente.direccion">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="correoPersona" class="col-form-label">Correo:</label>
-                                <input type="text" class="form-control" id="correoPersona" placeholder="Ingrese su correo">
-                            </div>
-                            <div class="col-sm-6 mb-2">
-                                <label for="sexoPersona" class="col-form-label">Sexo:</label>
-                                <select class="form-control" id="sexoPersona">
-                                    <option value="">Seleccione su sexo</option>
-                                    <option value="M">Masculino</option>
-                                    <option value="F">Femenino</option>
-                                </select>
+                                <input type="text" class="form-control" id="correoPersona" placeholder="Ingrese su correo" [(ngModel)]="cliente.correo">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="tipodedocumento" class="col-form-label">Tipo de documento:</label>
-                                <select class="form-control" id="tipodedocumento">
+                                <select class="form-control" id="tipodedocumento" [(ngModel)]="cliente.tipoDocumento">
                                     <option value="">Seleccione su tipo de documento</option>
                                     <option value="E">Extranjeria</option>
                                     <option value="DNI">Documento de identidad</option>
@@ -63,8 +59,12 @@
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="numeroDocumento" class="col-form-label">Numero de documento:</label>
-                                <input type="text" class="form-control" id="numeroDocumento" placeholder="Ingrese el numero">
+                                <input type="text" class="form-control" id="numeroDocumento" placeholder="Ingrese el numero" [(ngModel)]="cliente.nroDocumento">
                             </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>*Si no esta de acuerdo con sus datos, puede editarlos</strong>
+                            <button class="btn btn-info">Editar</button>
                         </div>
                     </div>
                 </div>
@@ -74,29 +74,36 @@
                     <div class="card-body">
                         <h2 class="card-title mb-3">Información del Vehículo</h2>
                         <div class="row">
+                            <div class="col-sm-12 mb-2">
+                                <label for="vehiculoCliente" class="col-form-label">Vehículo:</label>
+                                <select class="form-control" id="vehiculoCliente" [(ngModel)]="vehiculoSeleccionado" (change)="seleccionarVehiculo()">
+                                    <option value="">Seleccione un vehículo</option>
+                                    <option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.id">{{ vehiculo.modelo.marca.nombre }} - {{ vehiculo.modelo.nombre }}</option>
+                                </select>
+                            </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="marcaVehiculo" class="col-form-label">Marca:</label>
-                                <input type="text" class="form-control" id="marcaVehiculo" placeholder="Ingresar marca">
+                                <input type="text" class="form-control" id="marcaVehiculo" placeholder="Ingresar marca" [(ngModel)]="vehiculo.modelo.marca.nombre">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="modeloVehiculo" class="col-form-label">Modelo:</label>
-                                <input type="text" class="form-control" id="modeloVehiculo" placeholder="Ingresar modelo">
+                                <input type="text" class="form-control" id="modeloVehiculo" placeholder="Ingresar modelo" [(ngModel)]="vehiculo.modelo.nombre">
                             </div>
                             <div class="col-sm-6 mb-2">
-                                <label for="anioVehiculo" class="col-form-label">Año:</label>
-                                <input type="text" class="form-control" id="anioVehiculo" placeholder="Ingresar año">
+                                <label for="fechaVehiculo" class="col-form-label">Año:</label>
+                                <input type="number" class="form-control" id="fechaVehiculo" placeholder="Ingresar año" [(ngModel)]="vehiculo.fecha">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="colorVehiculo" class="col-form-label">Color:</label>
-                                <input type="text" class="form-control" id="colorVehiculo" placeholder="Ingresar color">
+                                <input type="text" class="form-control" id="colorVehiculo" placeholder="Ingresar color" [(ngModel)]="vehiculo.color">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="motorVehiculo" class="col-form-label">Motor:</label>
-                                <input type="text" class="form-control" id="motorVehiculo" placeholder="Ingresar motor">
+                                <input type="text" class="form-control" id="motorVehiculo" placeholder="Ingresar motor" [(ngModel)]="vehiculo.motor">
                             </div>
                             <div class="col-sm-6 mb-2">
                                 <label for="placaVehiculo" class="col-form-label">Placa:</label>
-                                <input type="text" class="form-control" id="placaVehiculo" placeholder="Ingresar placa">
+                                <input type="text" class="form-control" id="placaVehiculo" placeholder="Ingresar placa" [(ngModel)]="vehiculo.placa">
                             </div>
                             <div class="col-sm-12 mb-2">
                                 <label for="observacionesVehiculo" class="col-form-label">Observaciones:</label>
@@ -112,3 +119,4 @@
         </div>
     </section>
 </main>
+<app-footer></app-footer>

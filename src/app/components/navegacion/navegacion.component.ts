@@ -1,16 +1,30 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navegacion',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './navegacion.component.html',
   styleUrl: './navegacion.component.css'
 })
-export class NavegacionComponent {
+export class NavegacionComponent implements OnInit{
+  currentUser: any;
 
   constructor(private router: Router) { }
+
+  ngOnInit() {
+    const user = localStorage.getItem('currentUser');
+    if (user) {
+      this.currentUser = JSON.parse(user);
+    }
+  }
+
+  cerrarSesion() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['login']);
+  }
 
   formCita(){
     this.router.navigate(['cita']);
@@ -34,6 +48,14 @@ export class NavegacionComponent {
 
   formRegistro(){
     this.router.navigate(['registro']);
+  }
+
+  misCitas(){
+    this.router.navigate(['micita']);
+  }
+
+  misDatos(){
+    this.router.navigate(['miperfil']);
   }
 }
 

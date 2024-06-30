@@ -1,18 +1,21 @@
+<app-navegacion/>
 <main class="vh-100 d-flex justify-content-center align-items-center">
     <div class="contenedor">
         <div class="panel-izquierdo">
-            <h2>inicia sesión</h2>
-            <p>ingrese con su correo</p>
-            <input type="email" placeholder="correo" required>
-            <input type="password" placeholder="contraseña" required>
-            <button>INGRESAR</button>
+            <h2>Inicio de Sesión</h2>
+            <p>Ingrese con su correo</p>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <input type="text" placeholder="Nombre de Usuario" formControlName="username" required>
+                <input type="password" placeholder="Contraseña" formControlName="password" required>
+                <button type="submit">INGRESAR</button>
+                <p ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+            </form>
         </div>
         <div class="panel-derecho">
-            <h2>Hola,Usuario</h2>
-            <p>registrate con tus datos personales</p>
-            <button mat-stroked-button color="primary"
-            (click)="formRegistro()"
-            >Registrate</button>
+            <h2>Hola, Usuario</h2>
+            <p>Regístrese con sus datos personales</p>
+            <button mat-stroked-button color="primary" (click)="formRegistro()">Registrate</button>
         </div>
     </div>
 </main>
+<app-footer/>

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, inject } from '@angular/core';
 import { appsettings } from '../Settings/appsetting';
-import { Usuario } from '../Models/Usuario';
+import { Cliente } from '../Models/Cliente';
 import { ResponseAPI } from '../Models/ResponseAPI';
 
 @Injectable({
@@ -9,24 +9,24 @@ import { ResponseAPI } from '../Models/ResponseAPI';
 })
 export class UsuarioService {
   private http=inject(HttpClient);
-  private apiUrl: string = appsettings.apiUrl + "/usuario";
+  private apiUrl: string = appsettings.apiUrl + "/cliente";
 
   constructor() { }
 
   listar() {
-    return this.http.get<Usuario[]>(`${this.apiUrl}/listar`);
+    return this.http.get<Cliente[]>(`${this.apiUrl}/listar`);
   }
   
   obtener(codigo:number){
-    return this.http.get<Usuario>(`${this.apiUrl}/obtener/${codigo}`);
+    return this.http.get<Cliente>(`${this.apiUrl}/obtener/${codigo}`);
   }
 
-  crear(objeto:Usuario){
+  crear(objeto:Cliente){
     return this.http.post<ResponseAPI>(`${this.apiUrl}/registrar`, objeto);
   }
 
-  editar(objeto:Usuario){
-    return this.http.post<ResponseAPI>(`${this.apiUrl}/actualizar/${objeto.codigo}`, objeto);
+  editar(objeto:Cliente){
+    return this.http.post<ResponseAPI>(`${this.apiUrl}/actualizar/${objeto.idCliente}`, objeto);
   }
 
   eliminar(codigo:number){

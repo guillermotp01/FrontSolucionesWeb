@@ -16,18 +16,36 @@
                     <a class="nav-link" (click)="contacto()">Contacto</a>
                 </li>
             </ul>
-            <div class="d-flex dropdown">
-                <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    <p class="m-0">
-                        <strong>Hola,</strong> 
-                    </p>
-                    Inicia Sesión
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" (click)="formLogin()">Inicia Sesión</a></li>
-                    <li><a class="dropdown-item" (click)="formRegistro()">Regístrate</a></li>
-                </ul>
-            </div>
+            
+            <ng-container *ngIf="currentUser">
+                <div class="d-flex dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <p class="m-0">
+                            <strong>Hola, </strong>
+                        </p>
+                        <span>{{ currentUser.username }}</span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" (click)="misDatos()">Mis Datos</a></li>
+                        <li><a class="dropdown-item" (click)="cerrarSesion()">Cerrar Sesión</a></li>
+                    </ul>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="!currentUser">
+                <div class="d-flex dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <p class="m-0">
+                            <strong>Hola,</strong>
+                        </p>
+                        Inicia Sesión
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" (click)="formLogin()">Inicia Sesión</a></li>
+                        <li><a class="dropdown-item" (click)="formRegistro()">Regístrate</a></li>
+                    </ul>
+                </div>
+            </ng-container>
 
             <button type="button" class="btn ms-3" style="background-color: var(--color-secundario);" (click)="formCita()">Sacar Cita</button>
 

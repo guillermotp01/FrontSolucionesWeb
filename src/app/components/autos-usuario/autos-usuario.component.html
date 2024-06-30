@@ -1,20 +1,41 @@
+<app-navegacion></app-navegacion>
 <main class="min-vh-100 p-3 bg-light">
-    <app-dashuser/>
     <section class="container-lg mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="info-vehiculo card shadow-sm mb-4">
+                    <div class="p-4">
+                        <nav class="nav-perfil d-flex justify-content-between">
+                            <li>
+                                <a (click)="miPerfil()">
+                                    <i class="bi bi-person-fill"></i>
+                                    Mi Perfil
+                                </a>
+                            </li>
+                            <li>
+                                <a (click)="misCitas()">
+                                    <i class="bi bi-list-task"></i>
+                                    Mis Citas
+                                </a>
+                            </li>
+                            <li>
+                                <a (click)="misVehiculos()">
+                                    <i class="bi bi-car-front-fill"></i>
+                                    Mis Vehículos
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+                    <hr>
                     <div class="card-body">
                         <h2 class="card-title text-start">Mis vehículos</h2>
+
+                        <!-- Encabezados -->
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="icon-text my-4">
                                     <div class="d-flex align-items-center">
-                                        <span class="fw-bold fs-5">Marca</span>
-                                    </div>
-                                    <div class="mt-4">
-                                        <span class="text-muted">[Marca 1]</span><br>
-                                        <span class="text-muted">[Marca 2]</span><br>
+                                        <span class="fw-bold fs-5">Color</span>
                                     </div>
                                 </div>
                             </div>
@@ -23,26 +44,44 @@
                                     <div class="d-flex align-items-center">
                                         <span class="fw-bold fs-5">Modelo</span>
                                     </div>
-                                    <div class="mt-4">
-                                        <span class="text-muted">[Modelo 1]</span><br>
-                                        <span class="text-muted">[Modelo 2]</span><br>
-                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="icon-text my-4">
                                     <div class="d-flex align-items-center">
-                                        <span class="fw-bold fs-5">Código de Registro</span>
-                                    </div>
-                                    <div class="mt-4">
-                                        <span class="text-muted">[Código 1]</span><br>
-                                        <span class="text-muted">[Código 2]</span><br>
+                                        <span class="fw-bold fs-5">Marca</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
+
+                        <!-- Listado de vehículos -->
+                        <div *ngFor="let vehiculo of vehiculos" class="row">
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="mt-4">
+                                        <span class="text-muted">{{ vehiculo.color }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="mt-4">
+                                        <span class="text-muted">{{ vehiculo.modelo.nombre }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="mt-4">
+                                        <span class="text-muted">{{ vehiculo.modelo.marca.nombre }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="text-end mt-4">
-                            <button class="btn btn-primary">Agregar vehiculo</button>
+                            <button class="btn btn-primary" (click)="abrirModal()">Agregar vehículo</button>
                         </div>
                     </div>
                 </div>
@@ -50,3 +89,51 @@
         </div>
     </section>
 </main>
+<app-footer></app-footer>
+
+<!-- Modal -->
+<div *ngIf="showModal" class="modal fade show" style="display: block;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Vehículo</h5>
+                <button type="button" class="close" aria-label="Close" (click)="cerrarModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="vehiculoForm" (ngSubmit)="registrarVehiculo()">
+                    <div class="form-group">
+                        <label for="placa">Placa</label>
+                        <input type="text" class="form-control" id="placa" formControlName="placa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="color">Color</label>
+                        <input type="text" class="form-control" id="color" formControlName="color" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="anio">Año</label>
+                        <input type="number" class="form-control" id="anio" formControlName="anio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="motor">Motor</label>
+                        <input type="text" class="form-control" id="motor" formControlName="motor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="modelo">Modelo</label>
+                        <select class="form-select" id="modelo" formControlName="modelo">
+                            <option *ngFor="let model of modelos" [ngValue]="model.idModelo">{{ model.nombre }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="marca">Marca</label>
+                        <select class="form-select">
+                            <option *ngFor="let marca of marcas"> {{ marca.nombre }}</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

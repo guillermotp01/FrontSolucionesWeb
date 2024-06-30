@@ -22,8 +22,7 @@ export const routes: Routes = [
     { 'path': 'login', component:LoginComponent },
     { 'path': 'registro', component:RegistroComponent },
     { 'path': 'usuario', component:UsuarioComponent },
-    { 'path': 'micita', component:MIcitaComponent},
-    { 'path': 'detalleCita', component:DetalleCitaComponent},
+    { 'path': 'detalleCita/:id', component:DetalleCitaComponent},
     { 'path': 'dashUser', component:DashuserComponent},
     { 'path': 'miperfil', component:PerfilUsuarioComponent},
     { 'path': 'misautos', component:AutosUsuarioComponent}

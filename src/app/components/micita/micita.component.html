@@ -1,48 +1,73 @@
-<div class="formulario">
-  <div class="textbut">
-  <h1 id="texto">MIS CITAS<br></h1>
-  <button id="agregar" (click)="crearCita()"> Nueva Cita </button>
-  </div>
-  <div class="contenedor">
-      <mat-card-content>
-        <table mat-table [dataSource]="listaCitas" class="mat-elevation-z8">
-
-            <ng-container matColumnDef="idCita">
-              <th mat-header-cell *matHeaderCellDef> Código </th>
-              <td mat-cell *matCellDef="let element"> {{element.idCita}} </td>
-            </ng-container>
-        
-            <ng-container matColumnDef="fechaRegistro">
-              <th mat-header-cell *matHeaderCellDef> Fecha </th>
-              <td mat-cell *matCellDef="let element"> {{element.fechaRegistro}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="estado">
-              <th mat-header-cell *matHeaderCellDef> Estado </th>
-              <td mat-cell *matCellDef="let element"> {{element.estado}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="precio">
-              <th mat-header-cell *matHeaderCellDef> Precio </th>
-              <td mat-cell *matCellDef="let element"> {{element.precio}} </td>
-            </ng-container>
-
-            <ng-container matColumnDef="detalle">
-              <th mat-header-cell *matHeaderCellDef> Detalle </th>
-              <td mat-cell *matCellDef="let element"> 
-                  <button mat-button>
-                    <i class='bx bx-show-alt icon'></i>
-                  </button>
-              </td>
-            </ng-container>
-
-            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-        </table>
-    </mat-card-content>
-    <div class="scroll">
-        <button id="bot">a</button>
-        <button id="bot2">b</button>
-    </div>
-  </div>
-</div>
+<app-navegacion></app-navegacion>
+<main class="min-vh-100 p-3 bg-light">
+    <section class="container-lg mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="info-vehiculo card shadow-sm mb-4">
+                    <div class="p-4">
+                        <nav class="nav-perfil d-flex justify-content-between">
+                            <li>
+                                <a (click)="miPerfil()">
+                                    <i class="bi bi-person-fill"></i>
+                                    Mi Perfil
+                                </a>
+                            </li>
+                            <li>
+                                <a (click)="misCitas()">
+                                    <i class="bi bi-list-task"></i>
+                                    Mis Citas
+                                </a>
+                            </li>
+                            <li>
+                                <a (click)="misVehiculos()">
+                                    <i class="bi bi-car-front-fill"></i>
+                                    Mis Vehículos
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+                    <hr>
+                    <div class="card-body">
+                        <h2 class="card-title text-start">Mis Citas</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-bold fs-5">Tipo</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="text-muted" *ngFor="let cita of listaCitas">{{ cita.tipoCita.nombre }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-bold fs-5">Fecha</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="text-muted" *ngFor="let cita of listaCitas">{{ cita.fechaRegistro }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="icon-text my-4">
+                                    <div class="d-flex align-items-center">
+                                        <span class="fw-bold fs-5">Precio</span>
+                                    </div>
+                                    <div class="mt-4">
+                                        <span class="text-muted" *ngFor="let cita of listaCitas">{{ cita.precio }}</span><br>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-end mt-4">
+                            <button class="btn btn-primary">Agregar vehículo</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<app-footer></app-footer>

@@ -1,13 +1,36 @@
+<app-navegacion/>
 
 <main class="min-vh-100 p-3 bg-light">
-    <app-dashuser/>
     <section class="container-lg mt-5">
         <div class="row justify-content-center">
             <div class="col-lg-8">
                 <div class="info-usuario card shadow-sm mb-4">
+                    <div class="p-4">
+                        <nav class="nav-perfil d-flex justify-content-between">
+                            <li> 
+                                <a (click)="miPerfil()">
+                                    <i class="bi bi-person-fill"></i>
+                                    Mi Perfil
+                                </a>
+                            </li>
+                            <li> 
+                                <a (click)="misCitas()">
+                                    <i class="bi bi-list-task"></i>
+                                    Mis Citas
+                                </a>
+                            </li>
+                            <li> 
+                                <a (click)="misVehiculos()">
+                                    <i class="bi bi-car-front-fill"></i>
+                                    Mis Vehiculos
+                                </a>
+                            </li>
+                        </nav>
+                    </div>
+                    <hr>
                     <div class="card-body">
                         <h2 class="card-title text-start">Información Personal</h2>
-                        <div class="row">
+                        <div class="row" NgIf="cliente">
                             <div class="col-md-6">
                                 <div class="icon-text my-4">
                                     <div class="d-flex align-items-center">
@@ -15,11 +38,11 @@
                                     </div>
                                     <div class="mt-4">
                                         <span class="fw-bold">Nombre:</span><br>
-                                        <span class="text-muted ml-4">[Nombre]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.nombre }}</span><br>
                                         <span class="fw-bold">Apellido:</span><br>
-                                        <span class="text-muted ml-4">[Apellido]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.apellido }}</span><br>
                                         <span class="fw-bold">DNI/CE:</span><br>
-                                        <span class="text-muted ml-4">[DNI/CE]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.nroDocumento }}</span><br>
                                     </div>
                                 </div>
                             </div>
@@ -27,17 +50,14 @@
                                 <div class="icon-text my-5">
                                     <div class="mt-4">
                                         <span class="fw-bold">Celular:</span><br>
-                                        <span class="text-muted ml-4">[Celular]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.telefono }}</span><br>
                                         <span class="fw-bold">Correo:</span><br>
-                                        <span class="text-muted ml-4">[Correo]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.correo }}</span><br>
                                         <span class="fw-bold">Dirección:</span><br>
-                                        <span class="text-muted ml-4">[Dirección]</span><br>
+                                        <span class="text-muted ml-4">{{ cliente.direccion }}</span><br>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="text-end mt-4">
-                            <button class="btn btn-primary">Editar</button>
                         </div>
                     </div>
                 </div>
@@ -45,3 +65,4 @@
         </div>
     </section>
 </main>
+<app-footer/>
